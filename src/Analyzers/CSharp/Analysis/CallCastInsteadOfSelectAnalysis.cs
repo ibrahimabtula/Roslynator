@@ -33,7 +33,7 @@ namespace Roslynator.CSharp.Analysis
             if (extensionInfo.Symbol == null)
                 return;
 
-            if (!SymbolUtility.IsLinqSelect(extensionInfo.Symbol, semanticModel, allowImmutableArrayExtension: true))
+            if (!SymbolUtility.IsLinqSelect(extensionInfo.Symbol, allowImmutableArrayExtension: true))
                 return;
 
             ITypeSymbol typeArgument = extensionInfo.ReducedSymbolOrSymbol.TypeArguments[0];

@@ -29,7 +29,7 @@ namespace Roslynator.CSharp.Analysis
             if (methodSymbol == null)
                 return;
 
-            if (!SymbolUtility.IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Any", semanticModel))
+            if (!SymbolUtility.IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Any"))
                 return;
 
             ExpressionSyntax expression = invocationInfo.Expression;

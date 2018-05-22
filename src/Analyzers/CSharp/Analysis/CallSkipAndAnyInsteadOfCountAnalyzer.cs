@@ -55,7 +55,7 @@ namespace Roslynator.CSharp.Analysis
             if (methodSymbol == null)
                 return;
 
-            if (!SymbolUtility.IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Count", semanticModel))
+            if (!SymbolUtility.IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Count"))
                 return;
 
             SyntaxNode parent = invocationExpression.Parent;

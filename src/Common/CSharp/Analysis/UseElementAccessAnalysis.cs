@@ -19,7 +19,7 @@ namespace Roslynator.CSharp.Analysis
             if (methodSymbol == null)
                 return false;
 
-            if (!IsLinqElementAt(methodSymbol, semanticModel, allowImmutableArrayExtension: true))
+            if (!IsLinqElementAt(methodSymbol, allowImmutableArrayExtension: true))
                 return false;
 
             ITypeSymbol typeSymbol = semanticModel.GetTypeSymbol(invocationInfo.Expression, cancellationToken);
@@ -37,7 +37,7 @@ namespace Roslynator.CSharp.Analysis
             if (methodSymbol == null)
                 return false;
 
-            if (!IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "First", semanticModel, allowImmutableArrayExtension: true))
+            if (!IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "First", allowImmutableArrayExtension: true))
                 return false;
 
             ITypeSymbol typeSymbol = semanticModel.GetTypeSymbol(invocationInfo.Expression, cancellationToken);
@@ -55,7 +55,7 @@ namespace Roslynator.CSharp.Analysis
             if (methodSymbol == null)
                 return false;
 
-            if (!IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Last", semanticModel, allowImmutableArrayExtension: true))
+            if (!IsLinqExtensionOfIEnumerableOfTWithoutParameters(methodSymbol, "Last", allowImmutableArrayExtension: true))
                 return false;
 
             ITypeSymbol typeSymbol = semanticModel.GetTypeSymbol(invocationInfo.Expression, cancellationToken);
